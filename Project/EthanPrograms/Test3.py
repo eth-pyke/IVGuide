@@ -9,22 +9,29 @@ root.title('Test3')
 canvas = Canvas(root, width=im.width, height=im.height, bg='white')
 canvas.pack()
 
+# print(pix[234, 343])
+
+
 for y in range(1, im.height-1):
     for x in range(1, im.width-1):
-        if (pix[x, y] == (255, 255, 255)) & (pix[x-1, y] == (0, 0, 0)):
+       # if pix[x, y] == (255, 255, 255, 255):
+       #     j = y
+       #     canvas.create_line(x, j+1, x, j, width=1)
+
+        if (pix[x, y] == (255, 255, 255, 255)) & (pix[x-1, y] == (0, 0, 0, 255)):
             j = y
             canvas.create_line(x, j+1, x, j, width=1)
             # print('White found')
 
-        if (pix[x, y] == (255, 255, 255)) & (pix[x, y-1] == (0, 0, 0)):
+        if (pix[x, y] == (255, 255, 255, 255)) & (pix[x, y-1] == (0, 0, 0, 255)):
             j = y
             canvas.create_line(x, j + 1, x, j, width=1)
 
-        if (pix[x, y] == (255, 255, 255)) & (pix[x, y+1] == (0, 0, 0)):
+        if (pix[x, y] == (255, 255, 255, 255)) & (pix[x, y+1] == (0, 0, 0, 255)):
             j = y
             canvas.create_line(x, j + 1, x, j, width=1)
 
-        if (pix[x, y] == (255, 255, 255)) & (pix[x+1, y] == (0, 0, 0)):
+        if (pix[x, y] == (255, 255, 255, 255)) & (pix[x+1, y] == (0, 0, 0, 255)):
             j = y
             canvas.create_line(x, j + 1, x, j, width=1)
 
